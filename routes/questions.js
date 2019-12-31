@@ -71,6 +71,20 @@ router.get('/:id', auth, async (req, res) => {
         res.status(500).send('something went wrong');
     }
 })
+
+
+// // to get a particular ques
+// router.get('/:title', auth, async (req, res) => {
+//     const title = req.params.title;
+//     try {
+//         let ques = await Question.findOne({question : title});
+//         if (!ques) return res.status(404).send('Question not found');
+//         res.status(200).send(ques);
+//     }
+//     catch (e) {
+//         res.status(500).send('something went wrong');
+//     }
+// })
 module.exports = router;
 // question: { type: String, required: true },
 // answers: [{
