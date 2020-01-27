@@ -27,6 +27,7 @@ const quesRoute = require('./routes/questions');
 const learningRoute = require('./routes/learning');
 const notesRoute = require('./routes/notes');
 const searchRoute = require('./routes/search');
+const loopSpaceRoute = require('./routes/loopSpace');
 
 
 app.use(crossDomain);
@@ -38,6 +39,7 @@ app.use('/api/questions', quesRoute);
 app.use('/api/learning', learningRoute);
 app.use('/api/notes', notesRoute);
 app.use('/api/search', searchRoute);
+app.use('/api/loopSpace', loopSpaceRoute);
 // app.use(cors());
 
 server.listen(PORT, () => console.log(`Listening on port ${PORT}...`));

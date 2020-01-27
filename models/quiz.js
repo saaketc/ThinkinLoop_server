@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 
 const quizSchema = mongoose.Schema({
+    activityType: String,
     topic: String,
     content: [
         {
             question: String,
-            answer: String
+            answer: String,
+            options: [ String ]
         }
     ]
 
