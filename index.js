@@ -9,10 +9,11 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 const PORT = process.env.PORT || 5000;
+const dbConnect = process.env.MONGODB_URI || 'mongodb://localhost:27017/thinkinloop';
 
 const startDb = async () => {
     try {
-        const val = await mongoose.connect('mongodb://localhost:27017/thinkinloop', { useNewUrlParser: true, useUnifiedTopology: true });
+        const val = await mongoose.connect(dbConnect, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log('connected to db');
     }
     catch (e) {
